@@ -48,17 +48,18 @@ trace3_stackbarchart = go.Bar(x=stackbarchart_df['NOC'], y=stackbarchart_df['Bro
 data_stackbarchart = [trace1_stackbarchart, trace2_stackbarchart, trace3_stackbarchart]
 
 # 3 Line Chart - Hari Dhimal
+
 line_df = df4
 line_df['date'] = pd.to_datetime(line_df['date'])
 data_linechart = [go.Scatter(x=df4['date'], y=df4['actual_max_temp'], mode='lines', name='Max Temperature')]
 
 # 4 Multi Line Chart - Kush Bhuva
 
-multiline_df = df2
-multiline_df['Date'] = pd.to_datetime(multiline_df['Date'])
-trace1_multiline = go.Scatter(x=multiline_df['Date'], y=multiline_df['Death'], mode='lines', name='Death')
-trace2_multiline = go.Scatter(x=multiline_df['Date'], y=multiline_df['Recovered'], mode='lines', name='Recovered')
-trace3_multiline = go.Scatter(x=multiline_df['Date'], y=multiline_df['Unrecovered'], mode='lines', name='Under Treatment')
+multiline_df = df4
+multiline_df['date'] = pd.to_datetime(multiline_df['date'])
+trace1_multiline = go.Scatter(x=multiline_df['date'], y=multiline_df['actual_mean_temp'], mode='lines', name='actual_mean_temp')
+trace2_multiline = go.Scatter(x=multiline_df['date'], y=multiline_df['actual_min_temp'], mode='lines', name='actual_min_temp')
+trace3_multiline = go.Scatter(x=multiline_df['date'], y=multiline_df['actual_max_temp'], mode='lines', name='actual_max_temp')
 data_multiline = [trace1_multiline, trace2_multiline, trace3_multiline]
 
 # 5 Bubble chart - Hari Dhimal
@@ -71,7 +72,8 @@ data_bubblechart = [
                text=df4['date'],
                mode='markers', marker=dict(size=8, color='red'))]
 
-# Heatmap
+# Heatmap - Mauricio Barrera
+
 data_heatmap = [go.Heatmap(x=df2['Day'],
                            y=df2['WeekofMonth'],
                            z=df2['Recovered'].values.tolist(),
@@ -142,13 +144,13 @@ app.layout = html.Div(children=[
     html.Hr(style={'color': '#7FDBFF'}),
     html.H3('Multi Line chart', style={'color': '#df1e56'}),
     html.Div(
-        'This line chart represent the CoronaVirus death, recovered and under treatment cases of all reported cases in the given period.'),
+        'This line chart represent the Min, Mean and Max temperature at a certain day.'),
     dcc.Graph(id='graph5',
               figure={
                   'data': data_multiline,
                   'layout': go.Layout(
-                      title='Corona Virus Death, Recovered and under treatment Cases From 2020-01-22 to 2020-03-17',
-                      xaxis={'title': 'Date'}, yaxis={'title': 'Number of cases'})
+                      title='Min, Mean, and Max Temperature',
+                      xaxis={'title': 'Date'}, yaxis={'title': 'Temperature'})
               }
               ),
     html.Hr(style={'color': '#7FDBFF'}),
