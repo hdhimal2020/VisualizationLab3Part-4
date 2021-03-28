@@ -52,15 +52,6 @@ data_stackbarchart = [trace1_stackbarchart, trace2_stackbarchart, trace3_stackba
 line_df = df4
 line_df['date'] = pd.to_datetime(line_df['date'])
 data_linechart = [go.Scatter(x=df4['date'], y=df4['actual_max_temp'], mode='lines', name='Max Temperature')]
-html.H3('Line chart', style={'color': '#df1e56'}),
-html.Div('This line chart represent the Maximum Temperature of each day of the month in the given period.'),
-dcc.Graph(id='graph4',
-              figure={
-                  'data': data_linechart,
-                  'layout': go.Layout(title='Maximum Temperature of each day of the month From 2014-07-01 to 2015-6-15',
-                                      xaxis={'title': 'Month'}, yaxis={'title': 'Max Temperature'})
-              }
-              ),
 
 # 4 Multi Line Chart - Kush Bhuva
 
@@ -80,17 +71,6 @@ data_bubblechart = [
                y=df4['average_max_temp'],
                text=df4['date'],
                mode='markers', marker=dict(size=8, color='red'))]
-html.Hr(style={'color': '#7FDBFF'}),
-html.H3('Bubble chart', style={'color': '#df1e56'}),
-html.Div('This bubble chart represent the Average Min Temp and Average Man Temp of the given period.'),
-    dcc.Graph(id='graph6',
-              figure={
-                  'data': data_bubblechart,
-                  'layout': go.Layout(title='Weather details',
-                                      xaxis={'title': 'Average Min Temp'}, yaxis={'title': 'Average Max Temp'},
-                                      hovermode='closest')
-              }
-              ),])
 
 # Heatmap - Mauricio Barrera
 
