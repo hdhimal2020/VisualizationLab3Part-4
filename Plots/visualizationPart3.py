@@ -80,6 +80,17 @@ data_bubblechart = [
                y=df4['average_max_temp'],
                text=df4['date'],
                mode='markers', marker=dict(size=8, color='red'))]
+html.Hr(style={'color': '#7FDBFF'}),
+html.H3('Bubble chart', style={'color': '#df1e56'}),
+html.Div('This bubble chart represent the Average Min Temp and Average Man Temp of the given period.'),
+    dcc.Graph(id='graph6',
+              figure={
+                  'data': data_bubblechart,
+                  'layout': go.Layout(title='Weather details',
+                                      xaxis={'title': 'Average Min Temp'}, yaxis={'title': 'Average Max Temp'},
+                                      hovermode='closest')
+              }
+              ),])
 
 # Heatmap - Mauricio Barrera
 
