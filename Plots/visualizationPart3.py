@@ -47,7 +47,7 @@ trace3_stackbarchart = go.Bar(x=stackbarchart_df['NOC'], y=stackbarchart_df['Bro
                               marker={'color': '#CD7F32'})
 data_stackbarchart = [trace1_stackbarchart, trace2_stackbarchart, trace3_stackbarchart]
 
-# 3 Line Chart - Hari Dhimal
+# 3 Line Chart - Hari Dhimal- Completed
 
 line_df = df4
 line_df['date'] = pd.to_datetime(line_df['date'])
@@ -71,7 +71,7 @@ trace2_multiline = go.Scatter(x=multiline_df['date'], y=multiline_df['actual_min
 trace3_multiline = go.Scatter(x=multiline_df['date'], y=multiline_df['actual_max_temp'], mode='lines', name='actual_max_temp')
 data_multiline = [trace1_multiline, trace2_multiline, trace3_multiline]
 
-# 5 Bubble chart - Hari Dhimal
+# 5 Bubble chart - Hari Dhimal- Completed
 
 bubble_df = df4.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
 # preparing data
