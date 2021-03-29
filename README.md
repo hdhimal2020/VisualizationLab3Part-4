@@ -14,7 +14,7 @@ Group Submission: .
 
 -- Hari-- Bubble Chart -- Completed
 
-Kush-- Multi Line Chart
+-- Kush-- Multi Line Chart -- Completed
 
 Mauricio-- Heatmap Chart
 
