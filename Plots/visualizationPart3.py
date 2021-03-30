@@ -168,7 +168,7 @@ app.layout = html.Div(children=[
     html.Hr(style={'color': '#7FDBFF'}),
     html.H3('Heat map', style={'color': '#df1e56'}),
     html.Div(
-        'Heat Map Represent Max Temperature on Day of Week and Month of Year.'),
+        'Heat Map Represent Max Temperature on Day of Week and Month of Year'),
     dcc.Graph(id='graph7',
               figure={
                   'data': data_heatmap,
