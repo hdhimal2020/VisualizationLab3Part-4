@@ -16,5 +16,5 @@ Group Submission: .
 
 -- Kush-- Multi Line Chart -- Completed
 
-Mauricio-- Heatmap Chart
+Mauricio-- Heatmap Chart -- Completed
 
