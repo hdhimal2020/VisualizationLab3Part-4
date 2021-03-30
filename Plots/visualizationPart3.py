@@ -168,13 +168,16 @@ app.layout = html.Div(children=[
     html.Hr(style={'color': '#7FDBFF'}),
     html.H3('Heat map', style={'color': '#df1e56'}),
     html.Div(
-        'Heat Map Represent Max Temperature on Day of Week and Month of Year'),
+        'The heat map represents Max Temperature on ay of week and month of year.'),
     dcc.Graph(id='graph7',
               figure={
                   'data': data_heatmap,
                   'layout': go.Layout(title='Max Temperature On Day Of Week',
-                                      xaxis={'title': 'Day of Week'}, yaxis={'title': 'Week of Month'}
+                                      xaxis={'title': 'Day of Week'}, yaxis={'title': 'Week of Month'},
+                                      font=dict(size =10)
+
                                       )
+
               }
               )
 ])
